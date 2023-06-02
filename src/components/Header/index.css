@@ -1,0 +1,23 @@
+.nav-container{
+    padding: 17px;
+display: flex;
+justify-content: space-between;
+background-color: #272727;
+align-items: center;
+}
+.mobile-view-button-container{
+list-style-type: none;
+padding-left: 0px;
+display: flex;
+justify-content: space-between;
+
+}
+.mobile-view-header-button{
+    font-size: 32px;
+    color: #ffffff;
+    margin-left: 20px;
+}
+.mobile-view-header-logo{
+    width: 110px;
+}
+
