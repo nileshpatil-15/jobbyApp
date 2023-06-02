@@ -2,11 +2,18 @@
 import { Link } from 'react-router-dom'
 import { BiHomeCircle, BiExit } from 'react-icons/bi'
 import { TiShoppingBag } from 'react-icons/ti'
+import Cookie from 'js-cookie'
 import './index.css'
 
 
-const Header = () => (
-    <nav className='nav-container'>
+const Header = () => {
+
+    const logOut = () => {
+        const jwtToken = Cookie.get('jwt_token')
+        Cookie.remove(jwtToken)
+    }
+
+    return (<nav className='nav-container'>
         <Link to='/'>
             <img className='mobile-view-header-logo' alt='website logo' src='https://assets.ccbp.in/frontend/react-js/logo-img.png' />
         </Link>
@@ -24,13 +31,36 @@ const Header = () => (
                 </Link>
             </li>
             <li>
-                <Link to='login'>
-                    <BiExit className='mobile-view-header-button' />
-                </Link>
+                <button type="button" className='mobile-view-logout-button' onClick={logOut}>
+                    <Link to='login'>
+                        <BiExit className='mobile-view-header-button' />
+                    </Link>
+                </button>
+
             </li>
 
         </ul>
+        <ul className='desktop-view-button-container'>
+            <li className='home-text'>
+                <Link className='link' to='/'>
+                    <p >Home</p>
+                </Link>
+            </li>
+            <li className='job-text' >
+                <Link className='link' to='/jobs'>
+                    <p >Jobs</p>
+                </Link>
+            </li>
+            <li className='button'>
+                <Link  to='/login'>
+                    <button type="button" className='desktop-view-logout-button' onClick={logOut}>
+                        Logout
+                </button>
+                </Link>
+            </li>
+        </ul>
 
     </nav>
-)
+    )
+}
 export default Header

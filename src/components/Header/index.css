@@ -1,3 +1,6 @@
+*{
+font-family: roboto;    
+}
 .nav-container{
     padding: 17px;
 display: flex;
@@ -21,3 +24,52 @@ justify-content: space-between;
     width: 110px;
 }
 
+.mobile-view-logout-button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+@media screen and (min-width:768px){
+    .mobile-view-button-container{
+        display: none;
+    }
+
+}
+.desktop-view-button-container{
+    display: flex;
+    list-style: none;
+
+    align-items: center;
+
+width: 40%;}
+.link{
+color: #ffffff;    
+text-decoration: none;
+font-weight: 600;
+
+}
+
+.desktop-view-logout-button{
+  padding: 8px;
+  width: 100px;
+  border: none;
+  background-color: #6366f1;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 500;
+
+}
+.job-text{
+    margin-left: 25px;
+}
+.button{
+flex-grow: 1;
+    display: flex;
+    justify-content: end;
+}
+@media screen and (max-width:768px){
+.desktop-view-button-container{
+display: none;
+}    
+
+}

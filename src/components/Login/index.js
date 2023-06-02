@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 
 import {Component} from 'react'
-import Cookies from 'js-cookie'
+import Cookie from 'js-cookie'
 import './index.css'
 
 export default class Login extends Component {
@@ -18,9 +18,9 @@ export default class Login extends Component {
 
   onSuccessSubmit = jwtToken => {
     const {history} = this.props
-    Cookies.set('jwt_token', jwtToken, {expires: 300})
+    Cookie.set('jwt_token', jwtToken, {expires: 300})
     history.replace('/')
-    console.log(jwtToken)
+ 
   }
 
   onFormSubmit = async event => {

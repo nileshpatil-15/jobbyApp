@@ -16,7 +16,7 @@ background-color: #121212
 width: 70%;
 
 }
-@media screen and (min-width:576px){
+@media screen and (min-width:768px){
     .login-card-container{
         width: 50%;
     }
@@ -55,7 +55,6 @@ width: 130px;
 background-color: transparent;
 margin-top: 3px;
 color: #ffffff;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 
 font-weight: 500;
 }

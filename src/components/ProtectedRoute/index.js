@@ -1,16 +1,20 @@
 /* eslint-disable prettier/prettier */
-// import Cookies from 'js-cookie'
-// import Login from '../Login'
-// import { Route } from 'react-router-dom'
+import { Route,Redirect } from 'react-router-dom'
+import Cookie from 'js-cookie'
 
-// const ProtectedRoute = (props) => {
-//     const { history } = props
-//     console.log(history)
-//     const jwtToken = Cookies.get('jwt_token')
-//     console.log(jwtToken)
-//     if (jwtToken === undefined) {
-//         <Route path={...props} component={Home} />
-//     }
-// }
 
-// export default ProtectedRoute
+
+const ProtectedRoute = (props) => {
+   
+ 
+    const jwtToken = Cookie.get('jwt_token')
+    console.log(jwtToken)
+    if (jwtToken === undefined) {
+      return  <Redirect to='/login' />
+    }
+   
+      return  <Route {...props}/>
+    
+}
+
+export default ProtectedRoute
