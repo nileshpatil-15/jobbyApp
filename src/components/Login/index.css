@@ -1,0 +1,76 @@
+
+*{
+font-family: roboto;
+}
+.login-container{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #121212
+}
+.login-card-container{
+    background-color:#202020 ;
+    padding: 28px;
+    max-width: 380px;
+width: 70%;
+
+}
+@media screen and (min-width:576px){
+    .login-card-container{
+        width: 50%;
+    }
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.credential-container{
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
+
+}
+.login-logo-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.login-card-logo{
+width: 130px;
+}
+.credential-label{
+    color: #75787c;
+    font-weight: 500;
+    font-size: 13px;
+    
+}
+.credentials-input{
+    padding-left: 8px;
+    height: 40px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #64748b;
+background-color: transparent;
+margin-top: 3px;
+color: #ffffff;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
+font-weight: 500;
+}
+.login-btn{
+    background-color: #6366f1;
+    height: 40px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+margin-top: 15px;
+margin-bottom: 10px;
+}
+.error-msg{
+    color: red;
+    font-weight: 300;
+}
