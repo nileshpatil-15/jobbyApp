@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Link } from 'react-router-dom'
+import { Link,withRouter } from 'react-router-dom'
 import { BiHomeCircle, BiExit } from 'react-icons/bi'
 import { TiShoppingBag } from 'react-icons/ti'
 import Cookie from 'js-cookie'
@@ -9,8 +9,9 @@ import './index.css'
 const Header = () => {
 
     const logOut = () => {
-        const jwtToken = Cookie.get('jwt_token')
-        Cookie.remove(jwtToken)
+
+        Cookie.remove('jwt_token')
+
     }
 
     return (<nav className='nav-container'>
@@ -63,4 +64,4 @@ const Header = () => {
     </nav>
     )
 }
-export default Header
+export default withRouter(Header)

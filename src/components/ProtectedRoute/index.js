@@ -6,7 +6,7 @@ import Cookie from 'js-cookie'
 
 const ProtectedRoute = (props) => {
    
- 
+ console.log(props)
     const jwtToken = Cookie.get('jwt_token')
     console.log(jwtToken)
     if (jwtToken === undefined) {
