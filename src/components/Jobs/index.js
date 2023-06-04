@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import { Component } from 'react'
 import Loader from 'react-loader-spinner'
 import { BsSearch } from 'react-icons/bs'
+import Alljobs from '../Alljobs'
 import Filtergroup from '../Filtergroup'
 import Header from '../Header'
 
@@ -67,7 +68,9 @@ export default class Jobs extends Component {
     state = {
         isProfileShown: apiProfileStatusChange.initial,
         profileData: [],
-        activeEmploymentId:[]
+        activeEmploymentId: [],
+        salaryActiveId: '',
+        jobSearchinput: ''
 
     }
 
@@ -105,12 +108,18 @@ export default class Jobs extends Component {
 
     }
 
+    onChangejobSearch = (event) => {
+        this.setState({ jobSearchinput: event.target.value })
+    }
+
+
     renderJobSearchinput = () => (
         <div className='jobsearch-input-container'>
             <input
                 className='jobsearch-input'
                 type='search'
                 placeholder='Search'
+                onChange={this.onChangejobSearch}
             />
             {/* <BiSearchAlt2 className='job-search-icon' /> */}
             <button className='job-search-btn' type="button" data-testid="searchButton">
@@ -167,42 +176,46 @@ export default class Jobs extends Component {
         }
     }
 
-    changeEmployment=(isChecked,employmentType)=>{
-        const {activeEmploymentId}=this.state
-    console.log(isChecked,employmentType)
-    if(isChecked  ){
-this.setState({activeEmploymentId:employmentType})      
+    changeEmployment = (isChecked, employmentType) => {
+        const { activeEmploymentId } = this.state
+        if (isChecked) {
+            this.setState({ activeEmploymentId: [...activeEmploymentId, employmentType] })
+        }
+        else {
+            this.setState({ activeEmploymentId: activeEmploymentId.filter(each => each !== employmentType) })
+        }
     }
+
+    changeSalaryRange = (salaryRange) => {
+        this.setState({ salaryActiveId: salaryRange })
     }
 
     render() {
-        const { profileData, isProfileShown ,activeEmploymentId} = this.state
-        console.log(activeEmploymentId)
+        const { jobSearchinput, salaryActiveId, activeEmploymentId } = this.state
+
         return (
             <div className='jobs-main-container'>
                 <Header />
                 <div className='jobs-container'>
-                    {this.renderJobSearchinput()}
-                    <div className='profile-container'>
-                        {this.renderProfile()}
+                    <div className='filter-and-profile-container'>
+                        {this.renderJobSearchinput()}
+                        <div className='profile-container'>
+                            {this.renderProfile()}
+                        </div>
+                        <div className='all-jobs-container'>
+                            <Filtergroup
+                                employmentTypesList={employmentTypesList}
+                                salaryRangesList={salaryRangesList}
+                                changeEmployment={this.changeEmployment}
+                                changeSalaryRange={this.changeSalaryRange}
+                            // searchInput={searchInput}
+                            />
+                        </div>
+
                     </div>
-                    <div className='all-jobs-container'>
-                        <Filtergroup
-                            employmentTypesList={employmentTypesList}
-                            salaryRangesList={salaryRangesList}
-                            changeEmployment={this.changeEmployment}
-                        // activeRangeId={}
-                        // activeEmploymentId={}
-                        // changeEmploymentType={}
-                        // changeSalaryRange={}
-                        // searchInput={searchInput}
-
-
-                        />
-                     
-                        
+                    <div className='filtered-job-container'>
+                        <Alljobs jobSearchinput={jobSearchinput} />
                     </div>
-
                 </div>
 
 

@@ -18,7 +18,7 @@ flex-grow: 1;
 outline: none;
 padding-right: 17px;
 color: aliceblue;
-width: 100%;
+
 }
 
 
@@ -29,13 +29,13 @@ align-items: center;
 border: 1px solid #64748b;
 border-radius: 6px;
 padding-left: 15px;
-width: 40%;
+width: 100%;
 }
-@media screen and (max-width:576px){
-    .jobsearch-input-container{
-        width: 100%;
-    }
-}
+
+
+
+
+
 .job-search-btn{
     font-size: 20px; 
     background-color: #272727;
@@ -70,7 +70,8 @@ border-bottom-right-radius: 6px;
     height: 280px;
     width: 100%;
     justify-content: center;
-    align-items: center;
+   align-items: center;
+    flex-direction: column;
 }
 .retry-btn{
     width: 98px;
