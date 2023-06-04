@@ -1,0 +1,10 @@
+*{
+font-family: roboto;
+}
+
+.job-card{
+
+background-color: #202020;
+padding: 12px;
+border-radius: 10px;
+}

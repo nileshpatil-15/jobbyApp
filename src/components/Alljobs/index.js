@@ -1,33 +1,40 @@
 /* eslint-disable prettier/prettier */
-import { BsSearch } from 'react-icons/bs'
+import { AiOutlineStar } from 'react-icons/ai'
+
+import '.index.css'
+
+const Alljobs = (props) => {
+    const { data } = props
+    const { companyLogoUrl, employmentType, id, jobDescription, location, packagePerAnnum, rating, title } = data
+
+    const renderJobcard = () => (
+        <div className='job-card'>
+            <div className='card-logo-and-title-container'>
+                <img src={companyLogoUrl} className='company-logo' alt='company logo' />
+                <div className='name-and-rating-cntr'>
+                    <p>{title}</p>
+                    <div><AiOutlineStar className='star-icon'/>{rating}</div>
 
 
-const Alljobs=(props)=>{
-const {jobSearchinput}=props
 
-const renderSearchInput=()=>(
-     <div className='jobsearch-input-container'>
-            <input
-                className='jobsearch-input'
-                type='search'
-                placeholder='Search'
-                // onChange={this.onChangejobSearch}
-            />
-            {/* <BiSearchAlt2 className='job-search-icon' /> */}
-            <button className='job-search-btn' type="button" data-testid="searchButton">
-                <BsSearch className="search-icon" />
-            </button>
+                </div>
+            </div>
+<div className=''
+
         </div>
-)
+
+    )
 
 
-return(
-    <div>
-{renderSearchInput()}
+    return (
+       
+        <li>
+            {renderJobcard()}
 
-    </div>
 
-)
+        </li>
+
+    )
 
 }
 

@@ -85,3 +85,9 @@ padding: 7px;
 border-radius: 2px;
 height: 40px;
 }
+.failed-job-container{
+ text-align: center;
+}
+.loader{
+    text-align: center;
+}
