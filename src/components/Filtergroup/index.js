@@ -63,7 +63,7 @@ const Filtergroup = (props) => {
                         <input
                             type='radio'
                             name='salary'
-                            value={eachRange.label}
+                            value={eachRange.salaryRangeId}
                             onChange={onChangeSalary}
                              className= 'checked-options'  />
                                                  

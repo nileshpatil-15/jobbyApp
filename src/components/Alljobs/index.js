@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { AiOutlineStar } from 'react-icons/ai'
 
-import '.index.css'
+import './index.css'
 
 const Alljobs = (props) => {
     const { data } = props
@@ -14,14 +14,12 @@ const Alljobs = (props) => {
                 <div className='name-and-rating-cntr'>
                     <p>{title}</p>
                     <div><AiOutlineStar className='star-icon'/>{rating}</div>
-
+</div>
 
 
                 </div>
             </div>
-<div className=''
 
-        </div>
 
     )
 

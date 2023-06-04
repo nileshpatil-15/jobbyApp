@@ -5,6 +5,8 @@ font-family: roboto;
 .job-card{
 
 background-color: #202020;
-padding: 12px;
+padding: 16px;
 border-radius: 10px;
+margin-bottom: 12px;
+
 }
