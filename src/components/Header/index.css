@@ -2,11 +2,12 @@
 font-family: roboto;    
 }
 .nav-container{
-    padding: 17px;
+    padding-left: 15px;
 display: flex;
 justify-content: space-between;
 background-color: #272727;
 align-items: center;
+height: 80px;
 }
 .mobile-view-button-container{
 list-style-type: none;

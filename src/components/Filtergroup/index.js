@@ -40,7 +40,7 @@ const Filtergroup = (props) => {
                             name={each.employmentTypeId}
                             className='checked-options'
                         />
-                        <label  htmlFor={each.employmentTypeId}>{each.label}</label>
+                        <label className='filter-label'  htmlFor={each.employmentTypeId}>{each.label}</label>
                     </li>
 
                 )}
@@ -65,9 +65,11 @@ const Filtergroup = (props) => {
                             name='salary'
                             value={eachRange.salaryRangeId}
                             onChange={onChangeSalary}
-                             className= 'checked-options'  />
+                             className= 'checked-options'  
+                            id={eachRange.salaryRangeId}
+                             />
                                                  
-                        <label className='filter-label'>{eachRange.label}</label>
+                        <label htmlFor={eachRange.salaryRangeId} className='filter-label'>{eachRange.label}</label>
 
                     </li>)
                 }

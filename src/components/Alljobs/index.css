@@ -1,6 +1,4 @@
-*{
-font-family: roboto;
-}
+
 
 .job-card{
 
@@ -9,4 +7,47 @@ padding: 16px;
 border-radius: 10px;
 margin-bottom: 12px;
 
+
+}
+.card-logo-and-title-container{
+    margin-bottom: 13px;
+}
+.company-logo{
+    width: 58px;
+    height: 58px;
+    margin-right: 15px;
+}
+.job-title{
+    margin-top: 0px;
+}
+
+.rating{
+margin-top: 0px;
+margin-left: 3px;
+}
+.package{
+    flex-grow: 1;
+text-align: end;}
+.flex-container{
+    display: flex;
+}
+.location{
+    margin-top: 0px;
+    margin-left: 2px;
+}
+.employment-type{
+margin-top: 0px;
+margin-left: 4px;
+}
+.location-cntr{
+    margin-right: 20px;
+}
+.package{
+    margin-top: 0px;
+}
+.description{
+font-size: 17px;
+}
+.description-title{
+    font-size: 20px;
 }
