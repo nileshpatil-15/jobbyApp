@@ -57,13 +57,9 @@ const apiStatusChange = {
     success: 'SUCCESS',
     failed: 'FAILED',
     inprogress: 'INPROGRESS',
+    nojobs:'NOJOBS'
 }
-const apiProfileStatusChange = {
-    initial: 'INITIAL',
-    success: 'SUCCESS',
-    failed: 'FAILED',
-    inprogress: 'INPROGRESS',
-}
+
 
 export default class Jobs extends Component {
     state = {
@@ -100,9 +96,11 @@ export default class Jobs extends Component {
 
         const jobfilterApi = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentId.join()}&minimum_package=${salaryActiveId}&search=${jobSearchinput}`
         const response2 = await fetch(jobfilterApi, options)
+        console.log(response2.ok)
 
-        if (response2.ok === true) {
-            const data = await response2.json()
+        const data = await response2.json()
+        if (response2.ok === true || (data.jobs.length) > 0) {
+
             const formatedData = data.jobs.map(each => ({
                 companyLogoUrl: each.company_logo_url,
                 employmentType: each.employment_type,
@@ -113,9 +111,15 @@ export default class Jobs extends Component {
                 rating: each.rating,
                 title: each.title
             }))
-            this.setState({ jobsData: formatedData, isjoblistShown: apiStatusChange.success })
+            if (data.jobs.length === 0) {
+                console.log('nothing to apply')
+                this.setState({  isjoblistShown: apiStatusChange.nojobs })
 
+            } else {
+                this.setState({ jobsData: formatedData, isjoblistShown: apiStatusChange.success })
+            }
         }
+
         else {
             this.setState({ isjoblistShown: apiStatusChange.failed })
 
@@ -123,8 +127,8 @@ export default class Jobs extends Component {
 
 
     }
-    
-    onClickSearchBtn=()=>{
+
+    onClickSearchBtn = () => {
         this.getdetails()
     }
 
@@ -207,20 +211,6 @@ export default class Jobs extends Component {
 
 
 
-    renderProfile = () => {
-        const { isProfileShown } = this.state
-        switch (isProfileShown) {
-            case apiProfileStatusChange.inprogress:
-                return this.renderLoader()
-            case apiProfileStatusChange.success:
-                return this.renderProfileContainer()
-            case apiProfileStatusChange.failed:
-                return this.renderFailedProfile()
-            default:
-                return null;
-        }
-    }
-
     changeEmployment = (isChecked, employmentType) => {
         const { activeEmploymentId } = this.state
         if (isChecked) {
@@ -249,11 +239,23 @@ export default class Jobs extends Component {
         </div>
     )
 
+    renderNoJobs=()=>{
+console.log('triggered')
+
+        return(
+                        <img  className='no-job-img'  src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png' alt='no jobs'/>
+
+        )
+    }
+       
+    
+
     renderJobCards = () => {
         const { jobsData } = this.state
-
+console.log(jobsData.length)
         return (
-            <ul className='all-jobs-container'>
+         
+               <ul className='all-jobs-container'>
                 {jobsData.map(each => <Alljobs key={each.id} data={each} />)}
 
             </ul>
@@ -274,6 +276,9 @@ export default class Jobs extends Component {
 
             case apiStatusChange.success:
                 return this.renderJobCards()
+
+            case apiStatusChange.nojobs:
+                return this.renderNoJobs()
 
 
             default:
@@ -305,7 +310,11 @@ export default class Jobs extends Component {
                     </div>
                     <div className='filtered-job-container'>
                         {this.renderDesktopSearchinput()}
-                        {this.renderJobs()}
+                        <div className='job-cards-container'>
+                            {this.renderJobs()}
+
+                        </div>
+
 
 
                     </div>

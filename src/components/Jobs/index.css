@@ -9,20 +9,33 @@ background-color: #000000;
 
 }
 .jobs-container{
-
+overflow-y: scroll;
 padding: 20px;
+
 }
 @media screen and (min-width:576px){
 .jobs-container{
     display: flex;
-    padding: 50px;
+    padding: 30px;
 }    
    .filter-and-profile-container{
        width: 50%;
        margin-right: 50px;
+      
    }
     .filtered-job-container{
  width: 100%;
+ display: flex;
+ flex-direction: column; 
+ overflow: hidden;
+
+    }
+    .job-cards-container{
+        flex-grow: 1;
+ display: flex;
+ flex-direction: column; 
+  align-items: center;
+ justify-content: center;  
     }
     
 }
@@ -116,6 +129,7 @@ width: 100%;
 @media screen and (min-width:576px){
     .desktop-jobsearch-input-container{
        width: 50%;
+      
        
     }
 }
@@ -130,4 +144,7 @@ width: 100%;
 padding-left: 0px;
 list-style-type: none;
 
+}
+.no-job-img{
+    width: 280px;
 }

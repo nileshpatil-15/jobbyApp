@@ -14,7 +14,7 @@ const Header = () => {
 
     }
 
-    return (<nav className='nav-container'>
+    return (<div className='nav-container'>
         <Link to='/'>
             <img className='mobile-view-header-logo' alt='website logo' src='https://assets.ccbp.in/frontend/react-js/logo-img.png' />
         </Link>
@@ -61,7 +61,7 @@ const Header = () => {
             </li>
         </ul>
 
-    </nav>
+    </div>
     )
 }
 export default withRouter(Header)

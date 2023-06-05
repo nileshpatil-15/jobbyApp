@@ -2,6 +2,7 @@
 import { AiOutlineStar } from 'react-icons/ai'
 import { HiLocationMarker } from 'react-icons/hi'
 import {BsBagFill} from 'react-icons/bs'
+import {Link} from 'react-router-dom'
 
 import './index.css'
 
@@ -10,6 +11,7 @@ const Alljobs = (props) => {
     const { companyLogoUrl, employmentType, id, jobDescription, location, packagePerAnnum, rating, title } = data
 
     const renderJobcard = () => (
+        <Link to={`/jobs/${id}`} className='link'>
         <div className='job-card'>
             <div className='card-logo-and-title-container flex-container'>
                 <img src={companyLogoUrl} className='company-logo' alt='company logo' />
@@ -43,7 +45,7 @@ const Alljobs = (props) => {
             </div>
         </div>
 
-
+</Link>
     )
 
 

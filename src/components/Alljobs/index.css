@@ -9,6 +9,9 @@ margin-bottom: 12px;
 
 
 }
+.link{
+    text-decoration: none;
+}
 .card-logo-and-title-container{
     margin-bottom: 13px;
 }

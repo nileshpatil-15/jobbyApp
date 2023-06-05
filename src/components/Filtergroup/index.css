@@ -1,7 +1,6 @@
 
 
 *{
-    color: aliceblue;
     font-family: sans;
 }
 .filter-container{
@@ -16,10 +15,13 @@
 .checked-options{
     margin-right: 12px;
     margin-bottom: 12px;
+   
 }
 .filter-title{
     font-size: 20px;
+     color: white;
 }
 .filter-label{
 cursor: pointer;
+ color: white;
 }
