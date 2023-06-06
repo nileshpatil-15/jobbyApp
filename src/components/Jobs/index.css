@@ -104,6 +104,10 @@ height: 40px;
 }
 .failed-job-container{
  text-align: center;
+ color: white;
+}
+.job-failed-title{
+    font-size: 20px;
 }
 .loader{
     text-align: center;

@@ -85,7 +85,7 @@ export default class Jobs extends Component {
         const { jobSearchinput, salaryActiveId, activeEmploymentId } = this.state
 
         this.setState({ isjoblistShown: apiStatusChange.inprogress })
-        // const url = 'https://apis.ccbp.in/profile'
+      
         const jwtToken = Cookies.get('jwt_token')
         const options = {
             headers: {
@@ -203,11 +203,7 @@ export default class Jobs extends Component {
 
 
 
-    renderFailedProfile = () => (
-        <button className='retry-btn' type="button" onClick={this.getdetails} >
-            Retry
-    </button>
-    )
+   
 
 
 

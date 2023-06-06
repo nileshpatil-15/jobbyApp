@@ -8,4 +8,59 @@
     background-color: #000000;
 padding: 20px;
     flex-grow: 1;
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+.job-details-card-container{
+    color: white;
+    padding: 22px;
+    background-color: #202020;
+    width: 90%;
+    align-self: flex-start;
+    max-width: 1000px;
+    border-radius: 8px;
+}
+.anchor-container{
+    display: flex;
+    color: #b6c5ff;
+    text-decoration: none;
+    align-items: center;
+}
+.description-and-link-container{
+    display: flex;
+    justify-content: space-between;
+}
+.visit-text{
+    margin-right: 8px;
+    color: white;
+}
+.life-at-company{
+    font-size: 19px;
+    text-decoration: underline;
+}
+.life-at-company-img{
+
+    width: 100%;
+   
+}
+.life-at-comapny-description{
+    font-size: 18px;
+}
+@media screen and (min-width:576px){
+    
+    .life-at-company-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    .life-at-company-img{
+     max-width: 300px;
+   max-height: 250px;
+    }
+    .life-at-comapny-description{
+      
+        margin-right: 10px;
+        margin-top: 0px;
+    }
+
 }
