@@ -4,11 +4,15 @@ import Cookie from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import { AiOutlineStar } from 'react-icons/ai'
 import { HiLocationMarker } from 'react-icons/hi'
-import { BsBagFill, BiLinkExternal } from 'react-icons/bs'
+import { BsBagFill } from 'react-icons/bs'
 import { FaExternalLinkAlt } from 'react-icons/fa'
+import Similarjobs from '../Similarjobs'
 import Header from '../Header'
 import Jobskills from '../Jobskills'
+
+
 import './index.css'
+
 
 
 const jobDetailsApiChange = {
@@ -100,54 +104,67 @@ export default class Jobdetails extends Component {
 
     renderJobDetails = () => {
         const { jobsDetails, similarJobsDetails } = this.state
-        const { companyLogoUrl, title, skills, companyWebsiteUrl, lifeAtCompany,rating, jobDescription, location, packagePerAnnum, employmentType } = jobsDetails
+        const { companyLogoUrl, title, skills, companyWebsiteUrl, lifeAtCompany, rating, jobDescription, location, packagePerAnnum, employmentType } = jobsDetails
 
         return (
-            <div className='job-details-card-container' >
-                <div className='card-logo-and-title-container flex-container'>
-                    <img src={companyLogoUrl} className='company-logo' alt='company logo' />
-                    <div className='name-and-rating-cntr'>
-                        <p className='job-title'>{title}</p>
-                        <div className='flex-container' ><AiOutlineStar className='star-icon' />
-                            <p className='rating'>{rating}</p>
+            <div className='details'>
+
+                <div className='job-details-card-container' >
+                    <div className='card-logo-and-title-container flex-container'>
+                        <img src={companyLogoUrl} className='company-logo' alt='company logo' />
+                        <div className='name-and-rating-cntr'>
+                            <p className='job-title'>{title}</p>
+                            <div className='flex-container' ><AiOutlineStar className='star-icon' />
+                                <p className='rating'>{rating}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='location-and-package-cntr flex-container'>
-                    <div className='location-cntr flex-container'>
-                        <HiLocationMarker className='location-icon' />
-                        <p className='location'>{location}</p>
+                    <div className='location-and-package-cntr flex-container'>
+                        <div className='location-cntr flex-container'>
+                            <HiLocationMarker className='location-icon' />
+                            <p className='location'>{location}</p>
 
+                        </div>
+                        <div className='employment-type-cntr flex-container'>
+                            <BsBagFill className='employment-type-icon' />
+                            <p className='employment-type'>{employmentType}</p>
+
+                        </div>
+                        <p className='package'>{packagePerAnnum}</p>
                     </div>
-                    <div className='employment-type-cntr flex-container'>
-                        <BsBagFill className='employment-type-icon' />
-                        <p className='employment-type'>{employmentType}</p>
+                    <hr className='hr-line' />
+                    <div className='jobdetails-description-container'>
+                        <div className='description-and-link-container'>
+                            <p className='description-title'>description</p>
+                            <a className='anchor-container' href={companyWebsiteUrl}>
+                                <p className='visit-text'>Visit</p>
+                                <FaExternalLinkAlt id='redirect-icon' />
+                            </a>
 
+                        </div>
+                        <p className='description'>{jobDescription}</p>
                     </div>
-                    <p className='package'>{packagePerAnnum}</p>
-                </div>
-                <hr className='hr-line' />
-                <div className='jobdetails-description-container'>
-                    <div className='description-and-link-container'>
-                        <p className='description-title'>description</p>
-                        <a className='anchor-container' href={companyWebsiteUrl}>
-                            <p className='visit-text'>Visit</p>
-                            <FaExternalLinkAlt />
-                        </a>
-
+                    <Jobskills skills={skills} />
+                    <div>
+                        <p className='life-at-company'>Life at Company</p>
+                        <div className='life-at-company-container'>
+                            <p className='life-at-comapny-description'>{lifeAtCompany.description}</p>
+                            <img alt='life at company ' src={lifeAtCompany.imageUrl} className='life-at-company-img' />
+                        </div>
                     </div>
-                    <p className='description'>{jobDescription}</p>
-                </div>
-              <Jobskills  skills={skills} />
-              <div>
-              <p className='life-at-company'>Life at Company</p>
-              <div className='life-at-company-container'>
-              <p className='life-at-comapny-description'>{lifeAtCompany.description}</p>
-             <img alt='life at company ' src={lifeAtCompany.imageUrl} className='life-at-company-img' />
-              </div>
-             </div>
 
-            </div>)
+                </div>
+                <div >
+                 <h1 className='similar-job-text'>Similar Jobs</h1>
+                    <ul className='similar-jobs-container'>
+                       
+                        {
+                            similarJobsDetails.map(eachSimilarJob => <Similarjobs key={eachSimilarJob.id} similarJobDetail={eachSimilarJob} />)
+                        }
+                    </ul>
+                </div>
+            </div>
+        )
 
     }
 
@@ -166,7 +183,7 @@ export default class Jobdetails extends Component {
     )
 
     renderLoading = () => (
-        <div className="loader-container" data-testid="loader">
+        <div className="loader-container jobs" data-testid="loader">
             <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
         </div>
     )

@@ -11,19 +11,31 @@ padding: 20px;
     display: flex;
 justify-content: center;
 align-items: center;
+
 }
+
 .job-details-card-container{
     color: white;
     padding: 22px;
-    background-color: #202020;
-    width: 90%;
-    align-self: flex-start;
-    max-width: 1000px;
+    background-color: #202020;   
+   
     border-radius: 8px;
+    width: 100%;
+}
+.details{
+width: 90%;
+align-self: flex-start;
+max-width: 1000px;
+}
+@media screen and (min-width:576px){
+    .similar-jobs-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 .anchor-container{
     display: flex;
-    color: #b6c5ff;
+   
     text-decoration: none;
     align-items: center;
 }
@@ -34,6 +46,9 @@ align-items: center;
 .visit-text{
     margin-right: 8px;
     color: white;
+}
+#redirect-icon{
+    color: #b6c5ff;
 }
 .life-at-company{
     font-size: 19px;
@@ -63,4 +78,14 @@ align-items: center;
         margin-top: 0px;
     }
 
+}
+.similar-jobs-container{
+    padding-left: 0px;
+    list-style-type: none;
+   
+
+}
+.similar-job-text{
+    text-decoration: underline;
+    font-size: 24px;
 }
