@@ -6,11 +6,12 @@ import Cookie from 'js-cookie'
 import './index.css'
 
 
-const Header = () => {
+const Header = (props) => {
 
     const logOut = () => {
-
+const{history}=props
         Cookie.remove('jwt_token')
+        history.replace('/login')
 
     }
 

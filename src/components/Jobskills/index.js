@@ -8,7 +8,7 @@ const{skills}=props
 
 return(
     <>
-<p className='skills-title'>Skills</p>
+<h1 className='skills-title'>Skills</h1>
 <ul className='skills-container'>
 {
     skills.map(eachSkills=>(

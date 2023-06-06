@@ -14,7 +14,7 @@ const Alljobs = (props) => {
         <Link to={`/jobs/${id}`} className='link'>
         <div className='job-card'>
             <div className='card-logo-and-title-container flex-container'>
-                <img src={companyLogoUrl} className='company-logo' alt='company logo' />
+                <img src={companyLogoUrl} className='company-logo' alt='job details company logo' />
                 <div className='name-and-rating-cntr'>
                     <p className='job-title'>{title}</p>
                     <div className='flex-container' ><AiOutlineStar className='star-icon' />
@@ -39,7 +39,7 @@ const Alljobs = (props) => {
             </div>
             <hr className='hr-line'/>
             <div className='description-container'>
-            <p className='description-title'>Description</p>
+            <h1 className='description-title'>Description</h1>
             <p className='description'>{jobDescription}</p>
 
             </div>

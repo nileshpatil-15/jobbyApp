@@ -7,11 +7,13 @@
 min-height: 100vh;
 background-color: #000000;
 
+
 }
 .jobs-container{
-overflow-y: scroll;
-padding: 20px;
 
+ padding: 20px;
+
+ 
 }
 @media screen and (min-width:576px){
 .jobs-container{
@@ -21,6 +23,7 @@ padding: 20px;
    .filter-and-profile-container{
        width: 50%;
        margin-right: 50px;
+     
       
    }
     .filtered-job-container{
@@ -36,6 +39,7 @@ padding: 20px;
  flex-direction: column; 
   align-items: center;
  justify-content: center;  
+ 
     }
     
 }
@@ -48,6 +52,9 @@ outline: none;
 padding-right: 17px;
 color: aliceblue;
 
+}
+.no-job-container{
+    text-align: center;
 }
 
 
@@ -147,6 +154,7 @@ width: 100%;
 .all-jobs-container{
 padding-left: 0px;
 list-style-type: none;
+
 
 }
 .no-job-img{

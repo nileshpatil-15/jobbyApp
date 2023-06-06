@@ -146,7 +146,7 @@ export default class Jobdetails extends Component {
                     </div>
                     <Jobskills skills={skills} />
                     <div>
-                        <p className='life-at-company'>Life at Company</p>
+                        <h1 className='life-at-company'>Life at Company</h1>
                         <div className='life-at-company-container'>
                             <p className='life-at-comapny-description'>{lifeAtCompany.description}</p>
                             <img alt='life at company ' src={lifeAtCompany.imageUrl} className='life-at-company-img' />
@@ -170,10 +170,10 @@ export default class Jobdetails extends Component {
 
     renderFailedToShowJobdetails = () => (
         <div className='failed-job-container'>
-            <img alt='failure job' className='job-failed-img' src='https://assets.ccbp.in/frontend/react-js/failure-img.png' />
+            <img alt='failure view' className='job-failed-img' src='https://assets.ccbp.in/frontend/react-js/failure-img.png' />
             <h1 className='job-failed-title'>Oops! Something Went Wrong</h1>
             <p className='job-failed-description'>
-                we cannot seem to find tha page you are looking
+               We cannot seem to find the page you are looking for
 </p>
             <button className='retry-btn' type="button" onClick={this.getJobDetails} >
                 Retry
@@ -205,7 +205,6 @@ export default class Jobdetails extends Component {
     }
 
     render() {
-        const { similarJobsDetails, jobsDetails } = this.state
 
         // console.log(similarJobsDetails, jobsDetails)
         return (

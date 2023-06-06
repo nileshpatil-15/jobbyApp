@@ -28,7 +28,7 @@ const Filtergroup = (props) => {
         return (
             <ul className='filter-container'>
                 <hr className='hr-line' />
-                <p className='filter-title'>Type of Employment</p>
+                <h1 className='filter-title'>Type of Employment</h1>
                 {employmentTypesList.map(each =>
 
 
@@ -57,7 +57,7 @@ const Filtergroup = (props) => {
         return (
             <ul className='filter-container'>
                 <hr className='hr-line' />
-                <p className='filter-title'>Salary Range</p>
+                <h1 className='filter-title'>Salary Range</h1>
                 {
                     salaryRangesList.map(eachRange => <li key={eachRange.salaryRangeId}>
                         <input

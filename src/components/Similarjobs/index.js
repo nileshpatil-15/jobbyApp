@@ -8,7 +8,7 @@ import './index.css'
 
 const Similarjobs = (props) => {
     const { similarJobDetail } = props
-    const { title, companyLogoUrl, rating,id, jobDescription, location, employmentType } = similarJobDetail
+    const { title, companyLogoUrl, rating, jobDescription, location, employmentType } = similarJobDetail
     console.log(title)
 
     return (
@@ -16,9 +16,9 @@ const Similarjobs = (props) => {
         
             <li className='similar-job-card'>
                 <div className='card-logo-and-title-container flex-container'>
-                    <img src={companyLogoUrl} className='company-logo' alt='company logo' />
+                    <img src={companyLogoUrl} className='company-logo' alt='similar job company logo' />
                     <div className='name-and-rating-cntr'>
-                        <p className='job-title'>{title}</p>
+                        <h1 className='job-title'>{title}</h1>
                         <div className='flex-container' ><AiOutlineStar className='star-icon' />
                             <p className='rating'>{rating}</p>
                         </div>
@@ -26,10 +26,10 @@ const Similarjobs = (props) => {
                 </div>
                 <div className='jobdetails-description-container'>
                     <div className='description-and-link-container'>
-                        <p className='description-title'>description</p>
+                        <h1 className='description-title'>description</h1>
 
                     </div>
-                    <p className='description'>{jobDescription}</p>
+                    <h1 className='description'>{jobDescription}</h1>
                 </div>
                 <div className='location-and-package-cntr flex-container'>
                     <div className='location-cntr flex-container'>

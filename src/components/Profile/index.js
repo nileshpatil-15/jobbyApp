@@ -16,7 +16,7 @@ const apiProfileStatusChange = {
 export default class Profile extends Component {
 
     state={
-        isProfileSown:apiProfileStatusChange.initial,
+        // isProfileSown:apiProfileStatusChange.initial,
         profileData:[]
     }
 
@@ -27,7 +27,6 @@ componentDidMount() {
     
     getdetails = async () => {
        
-        const { jobSearchinput, salaryActiveId, activeEmploymentId } = this.state
 
         this.setState({ isProfileShown: apiProfileStatusChange.inprogress })
         const url = 'https://apis.ccbp.in/profile'
@@ -73,7 +72,7 @@ componentDidMount() {
         return (
             <div className='profile-card'>
                 <img alt='profile' className='profile-icon' src={profileImageUrl} />
-                <p className='profile-name'>{name}</p>
+                <h1 className='profile-name'>{name}</h1>
                 <p className='profile-bio'>{shortBio}</p>
 
 

@@ -92,7 +92,7 @@ export default class Login extends Component {
   }
 
   render() {
-    const {password, username, isErrorShown, errorMsg} = this.state
+    const {isErrorShown, errorMsg} = this.state
 
     // console.log(username, password)
     return (

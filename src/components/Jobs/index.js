@@ -57,7 +57,7 @@ const apiStatusChange = {
     success: 'SUCCESS',
     failed: 'FAILED',
     inprogress: 'INPROGRESS',
-    nojobs:'NOJOBS'
+    nojobs: 'NOJOBS'
 }
 
 
@@ -85,7 +85,7 @@ export default class Jobs extends Component {
         const { jobSearchinput, salaryActiveId, activeEmploymentId } = this.state
 
         this.setState({ isjoblistShown: apiStatusChange.inprogress })
-      
+
         const jwtToken = Cookies.get('jwt_token')
         const options = {
             headers: {
@@ -113,7 +113,7 @@ export default class Jobs extends Component {
             }))
             if (data.jobs.length === 0) {
                 console.log('nothing to apply')
-                this.setState({  isjoblistShown: apiStatusChange.nojobs })
+                this.setState({ isjoblistShown: apiStatusChange.nojobs })
 
             } else {
                 this.setState({ jobsData: formatedData, isjoblistShown: apiStatusChange.success })
@@ -203,7 +203,7 @@ export default class Jobs extends Component {
 
 
 
-   
+
 
 
 
@@ -223,10 +223,10 @@ export default class Jobs extends Component {
 
     renderFailedJobs = () => (
         <div className='failed-job-container'>
-            <img alt='failure job' className='job-failed-img' src='https://assets.ccbp.in/frontend/react-js/failure-img.png' />
+            <img alt='failure view' className='job-failed-img' src='https://assets.ccbp.in/frontend/react-js/failure-img.png' />
             <h1 className='job-failed-title'>Oops! Something Went Wrong</h1>
             <p className='job-failed-description'>
-                we cannot seem to find tha page you are looking
+               We cannot seem to find the page you are looking for
 </p>
             <button className='retry-btn' type="button" onClick={this.getdetails} >
                 Retry
@@ -235,23 +235,26 @@ export default class Jobs extends Component {
         </div>
     )
 
-    renderNoJobs=()=>{
-console.log('triggered')
+    renderNoJobs = () => {
+        console.log('triggered')
 
-        return(
-                        <img  className='no-job-img'  src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png' alt='no jobs'/>
-
+        return (
+            < div className='no-job-container'>
+            <img className='no-job-img' src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png' alt='no jobs' />
+            <h1>No Jobs Found</h1>
+            <p>We could not find any jobs. Try other filters</p>
+</div>
         )
     }
-       
-    
+
+
 
     renderJobCards = () => {
         const { jobsData } = this.state
-console.log(jobsData.length)
+        console.log(jobsData.length)
         return (
-         
-               <ul className='all-jobs-container'>
+
+            <ul className='all-jobs-container'>
                 {jobsData.map(each => <Alljobs key={each.id} data={each} />)}
 
             </ul>
@@ -283,7 +286,7 @@ console.log(jobsData.length)
     }
 
     render() {
-        const { jobsData, salaryActiveId, activeEmploymentId, jobSearchinput } = this.state
+        const { jobSearchinput } = this.state
         console.log(jobSearchinput)
 
         return (
