@@ -96,7 +96,7 @@ export default class Jobs extends Component {
 
         const jobfilterApi = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentId.join()}&minimum_package=${salaryActiveId}&search=${jobSearchinput}`
         const response2 = await fetch(jobfilterApi, options)
-  
+
 
         const data = await response2.json()
         if (response2.ok === true || (data.jobs.length) > 0) {
@@ -112,7 +112,7 @@ export default class Jobs extends Component {
                 title: each.title
             }))
             if (data.jobs.length === 0) {
-                
+
                 this.setState({ isjoblistShown: apiStatusChange.nojobs })
 
             } else {
@@ -227,7 +227,7 @@ export default class Jobs extends Component {
             <img alt='failure view' className='job-failed-img' src='https://assets.ccbp.in/frontend/react-js/failure-img.png' />
             <h1 className='job-failed-title'>Oops! Something Went Wrong</h1>
             <p className='job-failed-description'>
-               We cannot seem to find the page you are looking for
+                We cannot seem to find the page you are looking for
 </p>
             <button className='retry-btn' type="button" onClick={this.getdetails} >
                 Retry
@@ -236,23 +236,23 @@ export default class Jobs extends Component {
         </div>
     )
 
-    renderNoJobs = () => 
-     
+    renderNoJobs = () =>
 
-         (
+
+        (
             < div className='no-job-container'>
-            <img className='no-job-img' src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png' alt='no jobs' />
-            <h1>No Jobs Found</h1>
-            <p>We could not find any jobs. Try other filters</p>
-</div>
+                <img className='no-job-img' src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png' alt='no jobs' />
+                <h1>No Jobs Found</h1>
+                <p>We could not find any jobs. Try other filters</p>
+            </div>
         )
-    
+
 
 
 
     renderJobCards = () => {
         const { jobsData } = this.state
-      
+
         return (
 
             <ul className='all-jobs-container'>
