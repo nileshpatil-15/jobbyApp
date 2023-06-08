@@ -31,7 +31,7 @@ const Similarjobs = (props) => {
                     </div>
                     <h1 className='description'>{jobDescription}</h1>
                 </div>
-                <div className='location-and-package-cntr flex-container'>
+                <div className='job-location-cntr location-and-package-cntr flex-container'>
                     <div className='location-cntr flex-container'>
                         <HiLocationMarker className='location-icon' />
                         <p className='location'>{location}</p>

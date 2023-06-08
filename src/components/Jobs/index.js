@@ -96,7 +96,7 @@ export default class Jobs extends Component {
 
         const jobfilterApi = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentId.join()}&minimum_package=${salaryActiveId}&search=${jobSearchinput}`
         const response2 = await fetch(jobfilterApi, options)
-        console.log(response2.ok)
+  
 
         const data = await response2.json()
         if (response2.ok === true || (data.jobs.length) > 0) {
@@ -112,7 +112,7 @@ export default class Jobs extends Component {
                 title: each.title
             }))
             if (data.jobs.length === 0) {
-                console.log('nothing to apply')
+                
                 this.setState({ isjoblistShown: apiStatusChange.nojobs })
 
             } else {
@@ -209,6 +209,7 @@ export default class Jobs extends Component {
 
     changeEmployment = (isChecked, employmentType) => {
         const { activeEmploymentId } = this.state
+        console.log('changeemployment called first')
         if (isChecked) {
             this.setState({ activeEmploymentId: [...activeEmploymentId, employmentType] }, this.getdetails)
         }
@@ -235,23 +236,23 @@ export default class Jobs extends Component {
         </div>
     )
 
-    renderNoJobs = () => {
-        console.log('triggered')
+    renderNoJobs = () => 
+     
 
-        return (
+         (
             < div className='no-job-container'>
             <img className='no-job-img' src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png' alt='no jobs' />
             <h1>No Jobs Found</h1>
             <p>We could not find any jobs. Try other filters</p>
 </div>
         )
-    }
+    
 
 
 
     renderJobCards = () => {
         const { jobsData } = this.state
-        console.log(jobsData.length)
+      
         return (
 
             <ul className='all-jobs-container'>
@@ -286,8 +287,6 @@ export default class Jobs extends Component {
     }
 
     render() {
-        const { jobSearchinput } = this.state
-        console.log(jobSearchinput)
 
         return (
             <div className='jobs-main-container'>
