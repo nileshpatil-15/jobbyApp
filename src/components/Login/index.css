@@ -7,13 +7,14 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background-color: #121212
+background-image:url('https://img.freepik.com/free-vector/isometric-hiring-process_52683-44139.jpg?w=1060&t=st=1686474003~exp=1686474603~hmac=d32901c771627a7139967fd3b2c3a0f648889a6fcdc66d1ac9819a1644976c6c')
 }
 .login-card-container{
-    background-color:#202020 ;
+    background-image:linear-gradient(to right,#87CEEB,#dce0ee) ;
     padding: 28px;
     max-width: 380px;
 width: 70%;
+border-radius: 12px;
 
 }
 @media screen and (min-width:768px){
@@ -41,8 +42,8 @@ margin-bottom: 15px;
 width: 130px;
 }
 .credential-label{
-    color: #75787c;
-    font-weight: 500;
+    color: black;
+    font-weight: 600;
     font-size: 13px;
     
 }
@@ -55,8 +56,10 @@ width: 130px;
 background-color: transparent;
 margin-top: 3px;
 color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 font-weight: 500;
+
 }
 .login-btn{
     background-color: #6366f1;
@@ -68,6 +71,7 @@ font-weight: 500;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 margin-top: 15px;
 margin-bottom: 10px;
+cursor: pointer;
 }
 .error-msg{
     color: red;
