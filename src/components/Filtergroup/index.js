@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-
 import './index.css'
 
 const Filtergroup = (props) => {
@@ -40,7 +39,7 @@ const Filtergroup = (props) => {
                             name={each.employmentTypeId}
                             className='checked-options'
                         />
-                        <label className='filter-label'  htmlFor={each.employmentTypeId}>{each.label}</label>
+                        <label className='filter-label' htmlFor={each.employmentTypeId}>{each.label}</label>
                     </li>
 
                 )}
@@ -48,9 +47,6 @@ const Filtergroup = (props) => {
 
         )
     }
-
-
-
 
     const renderSalaryRangeFilter = () => {
         const { salaryRangesList } = props
@@ -65,10 +61,10 @@ const Filtergroup = (props) => {
                             name='salary'
                             value={eachRange.salaryRangeId}
                             onChange={onChangeSalary}
-                             className= 'checked-options'  
+                            className='checked-options'
                             id={eachRange.salaryRangeId}
-                             />
-                                                 
+                        />
+
                         <label htmlFor={eachRange.salaryRangeId} className='filter-label'>{eachRange.label}</label>
 
                     </li>)

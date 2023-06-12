@@ -9,11 +9,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 import Similarjobs from '../Similarjobs'
 import Header from '../Header'
 import Jobskills from '../Jobskills'
-
-
 import './index.css'
-
-
 
 const jobDetailsApiChange = {
     success: 'SUCCESS',
@@ -155,9 +151,9 @@ export default class Jobdetails extends Component {
 
                 </div>
                 <div >
-                 <h1 className='similar-job-text'>Similar Jobs</h1>
+                    <h1 className='similar-job-text'>Similar Jobs</h1>
                     <ul className='similar-jobs-container'>
-                       
+
                         {
                             similarJobsDetails.map(eachSimilarJob => <Similarjobs key={eachSimilarJob.id} similarJobDetail={eachSimilarJob} />)
                         }
@@ -173,12 +169,11 @@ export default class Jobdetails extends Component {
             <img alt='failure view' className='job-failed-img' src='https://assets.ccbp.in/frontend/react-js/failure-img.png' />
             <h1 className='job-failed-title'>Oops! Something Went Wrong</h1>
             <p className='job-failed-description'>
-               We cannot seem to find the page you are looking for
-</p>
+                We cannot seem to find the page you are looking for
+           </p>
             <button className='retry-btn' type="button" onClick={this.getJobDetails} >
                 Retry
-    </button>
-
+            </button>
         </div>
     )
 
@@ -206,15 +201,12 @@ export default class Jobdetails extends Component {
 
     render() {
 
-        // console.log(similarJobsDetails, jobsDetails)
         return (
             <div className='entire-container'>
                 <Header />
                 <div className='job-details-container'>
                     {this.renderJobsDetails()}
-
                 </div>
-
             </div>
         )
     }

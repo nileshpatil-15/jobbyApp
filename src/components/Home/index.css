@@ -3,20 +3,20 @@
 }
 .main-container{
     display: flex;
-min-height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
-background-size: cover;
-background-position: center;
+    background-size: cover;
+    background-position: center;
   
 }
 
 .home-container{
-background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
-background-size: cover;
-background-position: center;
-flex-grow: 1;
-padding: 19px;
+        background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
+        background-size: cover;
+        background-position: center;
+        flex-grow: 1;
+        padding: 19px;
 }
 
 .home-title{
@@ -25,11 +25,11 @@ padding: 19px;
     width: 60%;
 }
 .home-description{
-    color: #ffffff;
-    font-family: roboto;
-font-size: 20px;
-color: #64748b;
-width: 70%;
+        color: #ffffff;
+        font-family: roboto;
+        font-size: 20px;
+        color: #64748b;
+        width: 70%;
 }
 .findjob-btn{
     background-color: #4f46e5;
@@ -45,9 +45,8 @@ width: 70%;
 }
 @media screen and (min-width:768px){
     .home-container{
-
     background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
-   padding: 58px;
+    padding: 58px;
 }
     .home-description{
         width: 50%;

@@ -1,21 +1,16 @@
-
-
 *{
     font-family: sans;
 }
 .filter-container{
     padding-left: 0px;
     list-style: none;
-   
 }
 .hr-line{
     background-color: #ffffff;
 }
-
 .checked-options{
     margin-right: 12px;
     margin-bottom: 12px;
-   
 }
 .filter-title{
     font-size: 20px;

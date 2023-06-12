@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Link,withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { BiHomeCircle, BiExit } from 'react-icons/bi'
 import { TiShoppingBag } from 'react-icons/ti'
 import Cookie from 'js-cookie'
@@ -9,7 +9,7 @@ import './index.css'
 const Header = (props) => {
 
     const logOut = () => {
-const{history}=props
+        const { history } = props
         Cookie.remove('jwt_token')
         history.replace('/login')
 
@@ -54,7 +54,7 @@ const{history}=props
                 </Link>
             </li>
             <li className='button'>
-                <Link  to='/login'>
+                <Link to='/login'>
                     <button type="button" className='desktop-view-logout-button' onClick={logOut}>
                         Logout
                 </button>

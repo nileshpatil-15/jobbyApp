@@ -7,9 +7,6 @@ import Alljobs from '../Alljobs'
 import Filtergroup from '../Filtergroup'
 import Header from '../Header'
 import Profile from '../Profile'
-
-
-
 import './index.css'
 
 const employmentTypesList = [
@@ -50,8 +47,6 @@ const salaryRangesList = [
     },
 ]
 
-
-
 const apiStatusChange = {
     initial: 'INITIAL',
     success: 'SUCCESS',
@@ -60,25 +55,18 @@ const apiStatusChange = {
     nojobs: 'NOJOBS'
 }
 
-
 export default class Jobs extends Component {
     state = {
-
         activeEmploymentId: [],
         salaryActiveId: '',
         jobSearchinput: '',
         jobsData: [],
         isjoblistShown: apiStatusChange.initial
-
     }
 
     componentDidMount() {
         this.getdetails()
-
-
     }
-
-
 
     getdetails = async () => {
 
@@ -142,7 +130,6 @@ export default class Jobs extends Component {
         }
     }
 
-
     renderJobSearchinput = () => (
         <div className='jobsearch-input-container'>
             <input
@@ -176,11 +163,9 @@ export default class Jobs extends Component {
 
     )
 
-
     renderLoader = () => (
         <div className="loader-container" data-testid="loader">
             <Loader className='loader' type="ThreeDots" color="#ffffff" height="50" width="50" />
-
         </div>
     )
 
@@ -200,12 +185,6 @@ export default class Jobs extends Component {
 
         )
     }
-
-
-
-
-
-
 
     changeEmployment = (isChecked, employmentType) => {
         const { activeEmploymentId } = this.state
@@ -237,8 +216,6 @@ export default class Jobs extends Component {
     )
 
     renderNoJobs = () =>
-
-
         (
             < div className='no-job-container'>
                 <img className='no-job-img' src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png' alt='no jobs' />
@@ -246,9 +223,6 @@ export default class Jobs extends Component {
                 <p>We could not find any jobs. Try other filters</p>
             </div>
         )
-
-
-
 
     renderJobCards = () => {
         const { jobsData } = this.state
@@ -261,8 +235,6 @@ export default class Jobs extends Component {
             </ul>
         )
     }
-
-
 
     renderJobs = () => {
         const { isjoblistShown } = this.state
@@ -285,7 +257,7 @@ export default class Jobs extends Component {
                 return null;
         }
     }
-
+    
     render() {
 
         return (
@@ -327,3 +299,4 @@ export default class Jobs extends Component {
 
     }
 }
+
